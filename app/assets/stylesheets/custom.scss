@@ -1,15 +1,28 @@
 $navbar-default-bg: #f7cb26;
-$yellow: #f7cb26;
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "mixins";
+
+$yellow: #f7cb26;
+$padding-mobile: 15px 0 25px;
+$padding-main: 50px 0 70px;
 
 #logo {
 	float: left; font-size: 1.5em; color: white; text-transform: uppercase; font-weight: bold;
 	&:hover {color: black; text-decoration: none;}
 }
 .jumbotron {
-	background-image: url(image_path('triangles.jpg')); background-size: cover; height:250px;
+	background-image: url(image_path('triangles.jpg')); background-size: cover; height:250px; margin-bottom: 0;
 	h1 {margin-top:0;}
 	.btn {background-color: $yellow; border:none; color: black;}
+}
+
+.section1 {@include sec-default(); padding: $padding-mobile;
+	@include bp(xl) {
+		padding: $padding-main;
+	}
+}
+
+footer {@include sec-default(); background-color: $yellow; padding: 10px; text-align: center;
+	p {font-size: 18px; padding-top: 15px; color: black; }
 }
