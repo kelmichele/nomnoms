@@ -40,8 +40,8 @@ a:hover {text-decoration: none;}
 /************************************************/
 
 
-/***********RECIPES******************************/
-.recipes {
+/***********RECIPES/CHEFS**************************/
+.recipes, .chefs {
 	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
 	a {color: $orange;}
 	h4 {text-transform: capitalize;}
@@ -49,6 +49,10 @@ a:hover {text-decoration: none;}
 	.cancel { text-align: center;
 		a {color: $green;}
 	}
+}
+
+/**************RECIPES******************************/
+.recipes{
 	.recipe-actions {
 	  padding-top: 5px;
 	  a {color: white; font-size: 14px;}
@@ -62,11 +66,17 @@ a:hover {text-decoration: none;}
 		}
 	}
 	&.index {
-		.listing {@include sec-default(); margin-bottom: 15px;}
+		.full-listing {@include sec-default(); margin-bottom: 15px;}
 	}
 }
 
+/*************CHEFS******************************/
+.chefs {
+	.full-listing {@include sec-default(); margin-bottom: 15px;}
+	.listing {list-style: none; padding-left: 0;}
 
+	.chef-title a {color: $green; font-weight: bold;font-size: 1.25em;}
+}
 
 
 /****************MEDIA****************************/
