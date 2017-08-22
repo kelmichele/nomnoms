@@ -30,6 +30,7 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 }
 .description {margin-top:0; font-weight: bold;}
 
+
 .recipes {
 	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
 	a {color: $orange;}
@@ -42,9 +43,13 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 	  padding-top: 5px;
 	  a {color: white; font-size: 14px;}
 	}
+	.form-group .control-label {text-align: left;}
 }
 .recipes.show {
 	.well {@include sec-default();}
+	.corner {text-align: center;
+		p{font-style: italic; line-height: 2em;}
+	}
 }
 
 
