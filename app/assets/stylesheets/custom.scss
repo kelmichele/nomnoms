@@ -51,6 +51,9 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 		p{font-style: italic; line-height: 2em;}
 	}
 }
+.recipes.index {
+	.listing {@include sec-default(); margin-bottom: 15px;}
+}
 
 
 @include bp(xl) {
