@@ -12,17 +12,22 @@ $padding-main: 50px 0 70px;
 	&:hover {color: black; text-decoration: none;}
 }
 .jumbotron {
-	background-image: url(image_path('triangles.jpg')); background-size: cover; height:250px; margin-bottom: 0;
-	h1 {margin-top:0;}
+	background-image: url(image_path('triangles.jpg')); background-size: cover; margin-bottom: 0;
+	h1 {margin-top:0; font-size: 45px;}
 	.btn {background-color: $yellow; border:none; color: black;}
+		font-size: 60px;
 }
 
 .section1 {@include sec-default(); padding: $padding-mobile;
-	@include bp(xl) {
-		padding: $padding-main;
-	}
+
 }
 
 footer {@include sec-default(); background-color: $yellow; padding: 10px; text-align: center;
 	p {font-size: 18px; padding-top: 15px; color: black; }
+}
+
+
+@include bp(xl) {
+	.section1{padding: $padding-main;}
+	.jumbotron h1 {font-size: 60px;}
 }
