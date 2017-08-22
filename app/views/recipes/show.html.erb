@@ -16,9 +16,11 @@
       <small><%= time_ago_in_words(@recipe.created_at) %> ago</small>
 	  </div>
 	  <div class="recipe-actions">
-		  <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: 'btn btn-xs btn-warning' %>
-		  <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-xs btn-danger" %>
-		  <%= link_to "View All recipes", recipes_path, class: 'btn btn-xs btn-primary' %>
+		  <% if logged_in? && current_chef == @recipe.chef %>
+			  <%= link_to "Edit This Recipe", edit_recipe_path(@recipe), class: 'btn btn-xs btn-warning' %>
+			  <%= link_to "Delete This Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-xs btn-danger" %>
+			<% end %>
+		  <%= link_to "View All Recipes", recipes_path, class: 'btn btn-xs btn-primary' %>
 		</div>
 	</div>
 </div>
