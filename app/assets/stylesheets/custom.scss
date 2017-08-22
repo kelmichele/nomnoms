@@ -6,6 +6,7 @@ $navbar-default-bg: #f7cb26;
 $yellow: #f7cb26;
 $orange: #e66e13;
 $green: #073B15;
+$tan:  #f0d6a9;
 $padding-mobile: 15px 0 25px;
 $padding-main: 50px 0 70px;
 
@@ -13,24 +14,33 @@ a:hover {text-decoration: none;}
 .center-block {@include center-block();}
 
 
-#logo {
-	float: left; font-size: 1.5em; color: white; text-transform: uppercase; font-weight: bold;
-	&:hover {color: black; text-decoration: none;}
-}
-.jumbotron {
-	background-image: url(image_path('triangles.jpg')); background-size: cover; margin-bottom: 0;
-	h1 {margin-top:0; font-size: 45px;}
-	.btn {background-color: $yellow; border:none; color: black;}
-		font-size: 60px;
-}
-.section1 {@include sec-default(); padding: $padding-mobile;}
+/************************************************/
+	.navbar-default .navbar-toggle{background-color: $orange;
+		.icon-bar {background-color: white;}
+	}
 
-footer {@include sec-default(); background-color: $yellow; margin-top: 20px; padding: 10px; text-align: center;
-	p {font-size: 18px; padding-top: 15px; color: black; }
-}
-.description {margin-top:0; font-weight: bold;}
+	#logo {
+		float: left; font-size: 1.5em; color: white; text-transform: uppercase; font-weight: bold;
+		&:hover {color: black; text-decoration: none;}
+	}
+	.jumbotron {
+		background-image: url(image_path('cuisine.jpg')); background-size: cover; margin-bottom: 0;
+		position: relative; z-index: 0;
+		&:before{ @include before(); background-color: rgba($tan, .8);}
+		h1 {margin-top:0; font-size: 45px;}
+		.btn {background-color: $orange; border:none; color: white;}
+			font-size: 60px;
+	}
+	.section1 {@include sec-default(); padding: $padding-mobile;}
+
+	footer {@include sec-default(); background-color: $yellow; margin-top: 20px; padding: 10px; text-align: center;
+		p {font-size: 18px; padding-top: 15px; color: black; }
+	}
+	.description {margin-top:0; font-weight: bold;}
+/************************************************/
 
 
+/***********RECIPES******************************/
 .recipes {
 	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
 	a {color: $orange;}
@@ -44,18 +54,22 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 	  a {color: white; font-size: 14px;}
 	}
 	.form-group .control-label {text-align: left;}
-}
-.recipes.show {
-	.well {@include sec-default();}
-	.corner {text-align: center;
-		p{font-style: italic; line-height: 2em;}
+
+	&.show {
+		.well {@include sec-default();}
+		.corner {text-align: center;
+			p{font-style: italic; line-height: 2em;}
+		}
+	}
+	&.index {
+		.listing {@include sec-default(); margin-bottom: 15px;}
 	}
 }
-.recipes.index {
-	.listing {@include sec-default(); margin-bottom: 15px;}
-}
 
 
+
+
+/****************MEDIA****************************/
 @include bp(xl) {
 	.section1{padding: $padding-main;}
 	.jumbotron h1 {font-size: 60px;}
@@ -65,5 +79,6 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 	.chef-info {margin-bottom: 10px;}
 }
 
+/************************************************/
 
 
