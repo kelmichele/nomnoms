@@ -29,22 +29,32 @@ footer {@include sec-default(); background-color: $yellow; margin-top: 20px; pad
 	p {font-size: 18px; padding-top: 15px; color: black; }
 }
 .description {margin-top:0; font-weight: bold;}
-.chef_info {margin-top: 10px;}
+
 .recipes {
 	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
 	a {color: $orange;}
 	h4 {text-transform: capitalize;}
+	.chef_info {margin-top: 10px;}
+	.cancel { text-align: center;
+		a {color: $green;}
+	}
+	.recipe-actions {
+	  padding-top: 5px;
+	  a {color: white; font-size: 14px;}
+	}
 }
 .recipes.show {
 	.well {@include sec-default();}
 }
-.cancel { text-align: center;
-	a {color: $green;}
-}
+
 
 @include bp(xl) {
 	.section1{padding: $padding-main;}
 	.jumbotron h1 {font-size: 60px;}
+}
+
+@include bp(md) {
+	.chef-info {margin-bottom: 10px;}
 }
 
 
