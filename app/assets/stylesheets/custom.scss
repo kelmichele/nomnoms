@@ -4,8 +4,14 @@ $navbar-default-bg: #f7cb26;
 @import "mixins";
 
 $yellow: #f7cb26;
+$orange: #e66e13;
+$green: #073B15;
 $padding-mobile: 15px 0 25px;
 $padding-main: 50px 0 70px;
+
+a:hover {text-decoration: none;}
+.center-block {@include center-block();}
+
 
 #logo {
 	float: left; font-size: 1.5em; color: white; text-transform: uppercase; font-weight: bold;
@@ -17,17 +23,29 @@ $padding-main: 50px 0 70px;
 	.btn {background-color: $yellow; border:none; color: black;}
 		font-size: 60px;
 }
+.section1 {@include sec-default(); padding: $padding-mobile;}
 
-.section1 {@include sec-default(); padding: $padding-mobile;
-
-}
-
-footer {@include sec-default(); background-color: $yellow; padding: 10px; text-align: center;
+footer {@include sec-default(); background-color: $yellow; margin-top: 20px; padding: 10px; text-align: center;
 	p {font-size: 18px; padding-top: 15px; color: black; }
 }
-
+.description {margin-top:0; font-weight: bold;}
+.chef_info {margin-top: 10px;}
+.recipes {
+	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
+	a {color: $orange;}
+	h4 {text-transform: capitalize;}
+}
+.recipes.show {
+	.well {@include sec-default();}
+}
+.cancel { text-align: center;
+	a {color: $green;}
+}
 
 @include bp(xl) {
 	.section1{padding: $padding-main;}
 	.jumbotron h1 {font-size: 60px;}
 }
+
+
+
