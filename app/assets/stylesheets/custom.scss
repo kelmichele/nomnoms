@@ -10,6 +10,8 @@ $tan:  #f0d6a9;
 $padding-mobile: 15px 0 25px;
 $padding-main: 50px 0 70px;
 
+.no-padding{padding: 0;}
+
 a:hover {text-decoration: none;}
 .center-block {@include center-block();}
 ul {list-style-type: none;}
@@ -88,6 +90,12 @@ ul {list-style-type: none;}
 	.chef-title a {color: $green; font-weight: bold;font-size: 1.25em;}
 }
 
+/*************COMMENTS****************************/
+.comment-row {
+	@include sec-default();
+	padding: 25px 0;
+}
+
 /****************MEDIA****************************/
 @include bp(xl) {
 	.section1{padding: $padding-main;}
@@ -97,6 +105,7 @@ ul {list-style-type: none;}
 @include bp(md) {
 	.chef-info {margin-bottom: 10px;}
 	.ingredients .form-group .control-label {text-align: left;}
+	.recipe-actions a { margin-bottom: 10px;}
 }
 
 /************************************************/
