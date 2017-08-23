@@ -2,7 +2,7 @@
 <div class="container">
 	<%= render 'shared/page_title', title: @recipe.name %>
 
-	<div class="des well">
+	<div class=well">
 	  <h4 class="description">Steps:</h4>
 	  <hr />
 	  <%= simple_format(@recipe.description) %>
@@ -33,7 +33,7 @@
     <div class="col-md-8 col-md-offset-2">
       <h3>Comments: </h3>
       <hr />
-      <%= form_for([@recipe, @comment], :html => {class: "form-horizontal",
+      <%= form_for([@recipe, @comment], remote: true, :html => {class: "form-horizontal",
                                         role: "form"}) do |f| %>
         <div class="form-group">
           <div class="control-label col-md-2">
@@ -63,7 +63,7 @@
 	        <div id="messages">
 	          <%= render partial: 'comments/comments', object: @comments %>
 	        </div>
-	    </div>
+		  </div>
 		<% else %>
 		  <div class="col-md-8 center-block">
 		    <h3>Be the first to comment!</h3>
