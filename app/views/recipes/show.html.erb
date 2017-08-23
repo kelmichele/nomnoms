@@ -1,3 +1,4 @@
+<% @page_title = @recipe.name %>
 <div class="container">
 	<%= render 'shared/page_title', title: @recipe.name %>
 
@@ -6,10 +7,14 @@
 	  <hr />
 	  <%= simple_format(@recipe.description) %>
 	  <hr />
+	  <% if @recipe.ingredients.any? %>
+	    <p>Ingredients: <%= render @recipe.ingredients %></p>
+		<% end %>
+
 	  <div class="pull-right corner">
 	    <p>
 	      Created by: <br>
-	      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+	      <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
 	      <br>
 	      <small><%= @recipe.chef.chefname.capitalize %></small>
 			</p>

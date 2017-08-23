@@ -12,6 +12,7 @@ $padding-main: 50px 0 70px;
 
 a:hover {text-decoration: none;}
 .center-block {@include center-block();}
+ul {list-style-type: none;}
 
 
 /************************************************/
@@ -41,7 +42,7 @@ a:hover {text-decoration: none;}
 
 
 /***********RECIPES/CHEFS**************************/
-.recipes, .chefs, .sessions {
+.recipes, .chefs, .sessions, .ingredients {
 	h1 {text-transform: capitalize; text-align: center; font-size: 30px;}
 	a {color: $orange;}
 	h4 {text-transform: capitalize;}
@@ -54,8 +55,12 @@ a:hover {text-decoration: none;}
 	  padding-top: 5px;
 	  a {color: white; font-size: 14px;}
 	}
-}
 
+	.badge {
+		background-color: lighten($green, 20%); padding: 5px 10px;
+		a{color: white; font-size: 13px; text-transform: capitalize;}
+	}
+}
 /**************RECIPES******************************/
 .recipes{
 	.form-group .control-label {text-align: left;}
@@ -71,6 +76,10 @@ a:hover {text-decoration: none;}
 	}
 }
 
+.input_checkbox input {
+  width: auto !important;
+}
+
 /*************CHEFS******************************/
 .chefs {
 	.full-listing {@include sec-default(); margin-bottom: 15px;}
@@ -78,7 +87,6 @@ a:hover {text-decoration: none;}
 
 	.chef-title a {color: $green; font-weight: bold;font-size: 1.25em;}
 }
-
 
 /****************MEDIA****************************/
 @include bp(xl) {
@@ -88,6 +96,7 @@ a:hover {text-decoration: none;}
 
 @include bp(md) {
 	.chef-info {margin-bottom: 10px;}
+	.ingredients .form-group .control-label {text-align: left;}
 }
 
 /************************************************/
