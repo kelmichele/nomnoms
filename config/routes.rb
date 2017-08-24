@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :recipes do
-  	 resources :comments, only: [:create]
+  	resources :comments, only: [:create]
   end
 
 	get '/signup', to: 'chefs#new'
