@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'pg', '~> 0.18'
 
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -43,7 +43,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.18'
   gem 'redis'
 end
 
