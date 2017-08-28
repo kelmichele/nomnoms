@@ -30,6 +30,10 @@
 		</div>
 	</div>
 
+	<div align="center">
+    <%= image_tag @recipe.image.url if @recipe.image? %>
+  </div>
+
 	<div class="row">
 	  <div class="row col-md-8 center-block">
 	    <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
